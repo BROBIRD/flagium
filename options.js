@@ -108,11 +108,15 @@ function createActionItem(action, index) {
   const item = document.createElement('div');
   item.className = 'action-item';
 
+  // First row container for icon and info
+  const firstRow = document.createElement('div');
+  firstRow.className = 'action-item-row';
+
   // Icon
   const icon = document.createElement('span');
   icon.className = 'action-item-icon';
   icon.textContent = action.icon || '🔗';
-  item.appendChild(icon);
+  firstRow.appendChild(icon);
 
   // Info
   const info = document.createElement('div');
@@ -135,7 +139,8 @@ function createActionItem(action, index) {
     info.appendChild(url);
   }
 
-  item.appendChild(info);
+  firstRow.appendChild(info);
+  item.appendChild(firstRow);
 
   // Controls
   const controls = document.createElement('div');
@@ -305,43 +310,124 @@ async function saveSettings() {
 // Show save status
 function showSaveStatus() {
   const status = document.getElementById('saveStatus');
-  if (!status) {
+  if (status) {
+    // Update the text content with i18n message
+    const statusText = status.querySelector('span');
+    if (statusText) {
+      statusText.textContent = chrome.i18n.getMessage('saved') || 'Settings saved successfully!';
+    } else {
+      status.textContent = chrome.i18n.getMessage('saved') || 'Settings saved successfully!';
+    }
+
+    status.classList.remove('hidden');
+    setTimeout(() => {
+      status.classList.add('hidden');
+    }, 2000);
+  } else {
     // Create save status element if it doesn't exist
     const statusDiv = document.createElement('div');
     statusDiv.id = 'saveStatus';
     statusDiv.className = 'save-status';
-    statusDiv.style.cssText = `
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 20px;
-      background: var(--success-color);
-      color: white;
-      border-radius: 4px;
-      z-index: 1000;
-      animation: slideIn 0.3s ease;
-    `;
-    statusDiv.textContent = chrome.i18n.getMessage('saved') || 'Saved!';
+    statusDiv.textContent = chrome.i18n.getMessage('saved') || 'Settings saved successfully!';
     document.body.appendChild(statusDiv);
 
     setTimeout(() => {
       statusDiv.remove();
     }, 2000);
-  } else {
-    status.classList.remove('hidden');
+  }
+}
+
+// Save all settings
+async function saveAllSettings() {
+  const languageSelect = document.getElementById('languageSelect');
+  const cacheExpiryInput = document.getElementById('cacheExpiry');
+
+  const currentLanguage = await chrome.storage.sync.get(['language']);
+  const oldLanguage = currentLanguage.language || 'auto';
+  const newLanguage = languageSelect.value;
+
+  const settings = {
+    language: newLanguage,
+    cacheExpiry: parseInt(cacheExpiryInput.value) || 60,
+    actions: currentActions
+  };
+
+  try {
+    await chrome.storage.sync.set(settings);
+    showSaveStatus();
+
+    // If language changed, apply new language dynamically or reload
+    if (oldLanguage !== newLanguage) {
+      setTimeout(async () => {
+        // Try to apply language dynamically if language loader is available
+        if (window.languageLoader) {
+          await window.languageLoader.applyLanguage();
+        } else {
+          // Otherwise, reload the page to apply changes
+          window.location.reload();
+        }
+      }, 500);
+    }
+  } catch (error) {
+    console.error('Error saving settings:', error);
+  }
+}
+
+// Reset all settings and actions to defaults
+async function resetToDefaults() {
+  try {
+    // Reset language to auto
+    document.getElementById('languageSelect').value = 'auto';
+
+    // Reset cache expiry to 60 minutes
+    document.getElementById('cacheExpiry').value = 60;
+
+    // Reset actions to defaults
+    currentActions = [...DEFAULT_ACTIONS];
+
+    // Save all settings
+    await chrome.storage.sync.set({
+      language: 'auto',
+      cacheExpiry: 60,
+      actions: DEFAULT_ACTIONS
+    });
+
+    // Re-render actions list
+    renderActionsList();
+
+    // Show success message
+    const btn = document.getElementById('resetActionsBtn');
+    const originalText = btn.textContent;
+    btn.textContent = chrome.i18n.getMessage('resetComplete') || 'Reset complete!';
+    btn.disabled = true;
+
     setTimeout(() => {
-      status.classList.add('hidden');
+      btn.textContent = originalText;
+      btn.disabled = false;
     }, 2000);
+
+    // Show save status
+    showSaveStatus();
+  } catch (error) {
+    console.error('Error resetting to defaults:', error);
+    alert(chrome.i18n.getMessage('resetError') || 'Error resetting settings. Please try again.');
   }
 }
 
 // Setup event listeners
 function setupEventListeners() {
-  // Language change
-  document.getElementById('languageSelect').addEventListener('change', saveSettings);
+  // Save button
+  document.getElementById('saveSettingsBtn').addEventListener('click', saveAllSettings);
 
-  // Cache expiry change
-  document.getElementById('cacheExpiry').addEventListener('change', saveSettings);
+  // Language change (no auto-save)
+  document.getElementById('languageSelect').addEventListener('change', () => {
+    // Mark as unsaved (optional: add visual indicator)
+  });
+
+  // Cache expiry change (no auto-save)
+  document.getElementById('cacheExpiry').addEventListener('change', () => {
+    // Mark as unsaved (optional: add visual indicator)
+  });
 
   // Clear cache button
   document.getElementById('clearCacheBtn').addEventListener('click', async () => {
@@ -360,6 +446,13 @@ function setupEventListeners() {
   // Add action button
   document.getElementById('addActionBtn').addEventListener('click', () => {
     openActionModal();
+  });
+
+  // Reset settings button
+  document.getElementById('resetActionsBtn').addEventListener('click', async () => {
+    if (confirm(chrome.i18n.getMessage('confirmResetSettings') || 'Are you sure you want to reset all settings and actions to defaults? This cannot be undone.')) {
+      await resetToDefaults();
+    }
   });
 
   // Modal save button

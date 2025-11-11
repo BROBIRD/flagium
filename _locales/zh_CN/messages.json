@@ -128,6 +128,9 @@
   "clearCache": {
     "message": "清除缓存"
   },
+  "saveSettings": {
+    "message": "保存设置"
+  },
   "cacheCleared": {
     "message": "缓存已清除！"
   },
@@ -139,5 +142,29 @@
   },
   "actionDisabled": {
     "message": "已禁用"
+  },
+  "saved": {
+    "message": "设置已成功保存！"
+  },
+  "confirmDelete": {
+    "message": "确定要删除此操作吗？"
+  },
+  "cacheExpiryHelp": {
+    "message": "缓存IP和位置数据的时间（1-1440分钟）"
+  },
+  "refresh": {
+    "message": "刷新"
+  },
+  "resetSettings": {
+    "message": "重置为默认值"
+  },
+  "confirmResetSettings": {
+    "message": "确定要将所有设置和操作重置为默认值吗？此操作无法撤销。"
+  },
+  "resetComplete": {
+    "message": "重置完成！"
+  },
+  "resetError": {
+    "message": "重置设置时出错。请重试。"
   }
 }

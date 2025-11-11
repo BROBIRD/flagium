@@ -48,9 +48,15 @@
         <!-- Actions will be dynamically loaded here -->
       </div>
 
-      <div style="margin-top: 16px;">
+      <div style="margin-top: 16px; display: flex; gap: 8px;">
         <button class="btn-primary" id="addActionBtn" data-i18n="addAction"></button>
+        <button class="btn-secondary" id="resetActionsBtn" data-i18n="resetSettings"></button>
       </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="options-section save-section">
+      <button class="btn-primary save-button" id="saveSettingsBtn" data-i18n="saveSettings"></button>
     </div>
 
     <!-- Save Status -->
@@ -87,6 +93,7 @@
     </div>
   </div>
 
+  <script src="language-loader.js"></script>
   <script src="options.js"></script>
 </body>
 </html>

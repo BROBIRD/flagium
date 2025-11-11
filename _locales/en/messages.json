@@ -128,6 +128,9 @@
   "clearCache": {
     "message": "Clear Cache"
   },
+  "saveSettings": {
+    "message": "Save Settings"
+  },
   "cacheCleared": {
     "message": "Cache cleared!"
   },
@@ -139,5 +142,29 @@
   },
   "actionDisabled": {
     "message": "Disabled"
+  },
+  "saved": {
+    "message": "Settings saved successfully!"
+  },
+  "confirmDelete": {
+    "message": "Are you sure you want to delete this action?"
+  },
+  "cacheExpiryHelp": {
+    "message": "How long to cache IP and location data (1-1440 minutes)"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "resetSettings": {
+    "message": "Reset to Defaults"
+  },
+  "confirmResetSettings": {
+    "message": "Are you sure you want to reset all settings and actions to defaults? This cannot be undone."
+  },
+  "resetComplete": {
+    "message": "Reset complete!"
+  },
+  "resetError": {
+    "message": "Error resetting settings. Please try again."
   }
 }

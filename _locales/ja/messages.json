@@ -128,6 +128,9 @@
   "clearCache": {
     "message": "キャッシュをクリア"
   },
+  "saveSettings": {
+    "message": "設定を保存"
+  },
   "cacheCleared": {
     "message": "キャッシュをクリアしました！"
   },
@@ -139,5 +142,29 @@
   },
   "actionDisabled": {
     "message": "無効"
+  },
+  "saved": {
+    "message": "設定が正常に保存されました！"
+  },
+  "confirmDelete": {
+    "message": "このアクションを削除してもよろしいですか？"
+  },
+  "cacheExpiryHelp": {
+    "message": "IPと位置データをキャッシュする時間（1-1440分）"
+  },
+  "refresh": {
+    "message": "更新"
+  },
+  "resetSettings": {
+    "message": "デフォルトにリセット"
+  },
+  "confirmResetSettings": {
+    "message": "すべての設定とアクションをデフォルトにリセットしてもよろしいですか？この操作は取り消せません。"
+  },
+  "resetComplete": {
+    "message": "リセット完了！"
+  },
+  "resetError": {
+    "message": "設定のリセット中にエラーが発生しました。もう一度お試しください。"
   }
 }

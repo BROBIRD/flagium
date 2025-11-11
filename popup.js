@@ -7,8 +7,12 @@ let currentTabId = null;
 
 // Initialize popup when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
-  // Initialize i18n
-  initializeI18n();
+  // Initialize i18n with language loader if available
+  if (window.languageLoader) {
+    await window.languageLoader.applyLanguage();
+  } else {
+    initializeI18n();
+  }
 
   // Get current tab
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
