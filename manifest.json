@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "__MSG_extensionName__",
+  "name": "Flagium - Server Location & Network Info",
+  "short_name": "Flagium",
   "version": "1.0.0",
-  "description": "__MSG_extensionDescription__",
+  "description": "Display the physical server location and network details of any website you visit with country flags and IP information.",
   "default_locale": "en",
   "permissions": [
     "webRequest",
@@ -31,7 +32,8 @@
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
-    }
+    },
+    "default_title": "Flagium - Click to view server info"
   },
   "options_page": "options.html",
   "icons": {
