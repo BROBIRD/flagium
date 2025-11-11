@@ -71,6 +71,27 @@
   "languageJapanese": {
     "message": "日本語"
   },
+  "languageSpanish": {
+    "message": "Español"
+  },
+  "languageFrench": {
+    "message": "Français"
+  },
+  "languageGerman": {
+    "message": "Deutsch"
+  },
+  "languageRussian": {
+    "message": "Русский"
+  },
+  "languageIndonesian": {
+    "message": "Bahasa Indonesia"
+  },
+  "languagePortugueseBR": {
+    "message": "Português (Brasil)"
+  },
+  "languagePortuguesePT": {
+    "message": "Português (Portugal)"
+  },
   "customActions": {
     "message": "カスタムアクション"
   },

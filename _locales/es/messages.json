@@ -1,0 +1,191 @@
+{
+  "extensionName": {
+    "message": "Flagium"
+  },
+  "extensionDescription": {
+    "message": "Muestra la ubicación del servidor e información de red para sitios web"
+  },
+  "domain": {
+    "message": "Dominio"
+  },
+  "ipAddress": {
+    "message": "Dirección IP"
+  },
+  "country": {
+    "message": "País"
+  },
+  "city": {
+    "message": "Ciudad"
+  },
+  "ispOrganization": {
+    "message": "ISP/Organización"
+  },
+  "asn": {
+    "message": "ASN"
+  },
+  "protocol": {
+    "message": "Protocolo"
+  },
+  "hsts": {
+    "message": "HSTS"
+  },
+  "enabled": {
+    "message": "Habilitado"
+  },
+  "disabled": {
+    "message": "Deshabilitado"
+  },
+  "domainWhois": {
+    "message": "Whois del Dominio"
+  },
+  "ipWhois": {
+    "message": "Whois de IP"
+  },
+  "asnWhois": {
+    "message": "Whois de ASN"
+  },
+  "copyIP": {
+    "message": "Copiar IP"
+  },
+  "copied": {
+    "message": "¡Copiado!"
+  },
+  "settings": {
+    "message": "Configuración"
+  },
+  "language": {
+    "message": "Idioma"
+  },
+  "languageAuto": {
+    "message": "Automático (Idioma del navegador)"
+  },
+  "languageEnglish": {
+    "message": "English"
+  },
+  "languageChinese": {
+    "message": "简体中文"
+  },
+  "languageChineseTW": {
+    "message": "繁體中文"
+  },
+  "languageJapanese": {
+    "message": "日本語"
+  },
+  "languageSpanish": {
+    "message": "Español"
+  },
+  "languageFrench": {
+    "message": "Français"
+  },
+  "languageGerman": {
+    "message": "Deutsch"
+  },
+  "languageRussian": {
+    "message": "Русский"
+  },
+  "languageIndonesian": {
+    "message": "Bahasa Indonesia"
+  },
+  "languagePortugueseBR": {
+    "message": "Português (Brasil)"
+  },
+  "languagePortuguesePT": {
+    "message": "Português (Portugal)"
+  },
+  "customActions": {
+    "message": "Acciones Personalizadas"
+  },
+  "addAction": {
+    "message": "Agregar Acción"
+  },
+  "actionName": {
+    "message": "Nombre de la Acción"
+  },
+  "urlTemplate": {
+    "message": "Plantilla de URL"
+  },
+  "icon": {
+    "message": "Icono"
+  },
+  "save": {
+    "message": "Guardar"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "edit": {
+    "message": "Editar"
+  },
+  "loading": {
+    "message": "Cargando..."
+  },
+  "error": {
+    "message": "Error"
+  },
+  "errorFetchingData": {
+    "message": "Error al obtener datos"
+  },
+  "noDataAvailable": {
+    "message": "No hay datos disponibles"
+  },
+  "localAddress": {
+    "message": "Dirección Local"
+  },
+  "privateNetwork": {
+    "message": "Red Privada"
+  },
+  "unknown": {
+    "message": "Desconocido"
+  },
+  "cacheSettings": {
+    "message": "Configuración de Caché"
+  },
+  "cacheExpiry": {
+    "message": "Expiración de caché (minutos)"
+  },
+  "clearCache": {
+    "message": "Limpiar Caché"
+  },
+  "saveSettings": {
+    "message": "Guardar Configuración"
+  },
+  "cacheCleared": {
+    "message": "¡Caché limpiado!"
+  },
+  "urlTemplateHelp": {
+    "message": "Usa {domain}, {ip}, {asn}, {country_code} como marcadores de posición"
+  },
+  "actionEnabled": {
+    "message": "Habilitado"
+  },
+  "actionDisabled": {
+    "message": "Deshabilitado"
+  },
+  "saved": {
+    "message": "¡Configuración guardada exitosamente!"
+  },
+  "confirmDelete": {
+    "message": "¿Estás seguro de que quieres eliminar esta acción?"
+  },
+  "cacheExpiryHelp": {
+    "message": "Tiempo para almacenar en caché los datos de IP y ubicación (1-1440 minutos)"
+  },
+  "refresh": {
+    "message": "Actualizar"
+  },
+  "resetSettings": {
+    "message": "Restablecer a valores predeterminados"
+  },
+  "confirmResetSettings": {
+    "message": "¿Estás seguro de que quieres restablecer todas las configuraciones y acciones a los valores predeterminados? Esta acción no se puede deshacer."
+  },
+  "resetComplete": {
+    "message": "¡Restablecimiento completo!"
+  },
+  "resetError": {
+    "message": "Error al restablecer la configuración. Por favor, inténtalo de nuevo."
+  }
+}

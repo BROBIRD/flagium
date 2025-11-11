@@ -1,7 +1,7 @@
 // Language loader for dynamic language switching
 // This allows changing language without restarting the extension
 
-const SUPPORTED_LANGUAGES = ['en', 'zh_CN', 'zh_TW', 'ja'];
+const SUPPORTED_LANGUAGES = ['en', 'zh_CN', 'zh_TW', 'ja', 'es', 'fr', 'de', 'ru', 'id', 'pt_BR', 'pt_PT'];
 
 // Load language messages from a specific locale
 async function loadLanguageMessages(lang) {
@@ -42,6 +42,14 @@ async function getCurrentLanguage() {
       if (baseLang === 'zh') {
         // Default Chinese to Simplified
         lang = 'zh_CN';
+      } else if (baseLang === 'pt') {
+        // Check if it's Brazilian Portuguese
+        if (lang === 'pt_BR') {
+          lang = 'pt_BR';
+        } else {
+          // Default Portuguese to Portugal variant
+          lang = 'pt_PT';
+        }
       } else if (SUPPORTED_LANGUAGES.includes(baseLang)) {
         lang = baseLang;
       } else {

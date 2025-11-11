@@ -3,61 +3,61 @@
     "message": "Flagium"
   },
   "extensionDescription": {
-    "message": "顯示網站伺服器位置和網路資訊"
+    "message": "Tampilkan lokasi server dan informasi jaringan untuk situs web"
   },
   "domain": {
-    "message": "網域"
+    "message": "Domain"
   },
   "ipAddress": {
-    "message": "IP 位址"
+    "message": "Alamat IP"
   },
   "country": {
-    "message": "國家"
+    "message": "Negara"
   },
   "city": {
-    "message": "城市"
+    "message": "Kota"
   },
   "ispOrganization": {
-    "message": "ISP/組織"
+    "message": "ISP/Organisasi"
   },
   "asn": {
     "message": "ASN"
   },
   "protocol": {
-    "message": "協議"
+    "message": "Protokol"
   },
   "hsts": {
     "message": "HSTS"
   },
   "enabled": {
-    "message": "已啟用"
+    "message": "Diaktifkan"
   },
   "disabled": {
-    "message": "未啟用"
+    "message": "Dinonaktifkan"
   },
   "domainWhois": {
-    "message": "網域 Whois"
+    "message": "Whois Domain"
   },
   "ipWhois": {
-    "message": "IP Whois"
+    "message": "Whois IP"
   },
   "asnWhois": {
-    "message": "ASN Whois"
+    "message": "Whois ASN"
   },
   "copyIP": {
-    "message": "複製 IP"
+    "message": "Salin IP"
   },
   "copied": {
-    "message": "已複製！"
+    "message": "Disalin!"
   },
   "settings": {
-    "message": "設定"
+    "message": "Pengaturan"
   },
   "language": {
-    "message": "語言"
+    "message": "Bahasa"
   },
   "languageAuto": {
-    "message": "自動（瀏覽器語言）"
+    "message": "Otomatis (Bahasa Browser)"
   },
   "languageEnglish": {
     "message": "English"
@@ -93,99 +93,99 @@
     "message": "Português (Portugal)"
   },
   "customActions": {
-    "message": "自訂操作"
+    "message": "Tindakan Kustom"
   },
   "addAction": {
-    "message": "新增操作"
+    "message": "Tambah Tindakan"
   },
   "actionName": {
-    "message": "操作名稱"
+    "message": "Nama Tindakan"
   },
   "urlTemplate": {
-    "message": "URL 範本"
+    "message": "Template URL"
   },
   "icon": {
-    "message": "圖示"
+    "message": "Ikon"
   },
   "save": {
-    "message": "儲存"
+    "message": "Simpan"
   },
   "cancel": {
-    "message": "取消"
+    "message": "Batal"
   },
   "delete": {
-    "message": "刪除"
+    "message": "Hapus"
   },
   "edit": {
-    "message": "編輯"
+    "message": "Edit"
   },
   "loading": {
-    "message": "載入中..."
+    "message": "Memuat..."
   },
   "error": {
-    "message": "錯誤"
+    "message": "Error"
   },
   "errorFetchingData": {
-    "message": "取得資料時發生錯誤"
+    "message": "Error saat mengambil data"
   },
   "noDataAvailable": {
-    "message": "無可用資料"
+    "message": "Data tidak tersedia"
   },
   "localAddress": {
-    "message": "本機位址"
+    "message": "Alamat Lokal"
   },
   "privateNetwork": {
-    "message": "私人網路"
+    "message": "Jaringan Pribadi"
   },
   "unknown": {
-    "message": "未知"
+    "message": "Tidak diketahui"
   },
   "cacheSettings": {
-    "message": "快取設定"
+    "message": "Pengaturan Cache"
   },
   "cacheExpiry": {
-    "message": "快取過期時間（分鐘）"
+    "message": "Kedaluwarsa cache (menit)"
   },
   "clearCache": {
-    "message": "清除快取"
+    "message": "Hapus Cache"
   },
   "saveSettings": {
-    "message": "儲存設定"
+    "message": "Simpan Pengaturan"
   },
   "cacheCleared": {
-    "message": "快取已清除！"
+    "message": "Cache dihapus!"
   },
   "urlTemplateHelp": {
-    "message": "使用 {domain}、{ip}、{asn}、{country_code} 作為佔位符"
+    "message": "Gunakan {domain}, {ip}, {asn}, {country_code} sebagai placeholder"
   },
   "actionEnabled": {
-    "message": "已啟用"
+    "message": "Diaktifkan"
   },
   "actionDisabled": {
-    "message": "已停用"
+    "message": "Dinonaktifkan"
   },
   "saved": {
-    "message": "設定已成功儲存！"
+    "message": "Pengaturan berhasil disimpan!"
   },
   "confirmDelete": {
-    "message": "確定要刪除此操作嗎？"
+    "message": "Apakah Anda yakin ingin menghapus tindakan ini?"
   },
   "cacheExpiryHelp": {
-    "message": "快取IP和位置資料的時間（1-1440分鐘）"
+    "message": "Berapa lama untuk menyimpan data IP dan lokasi (1-1440 menit)"
   },
   "refresh": {
-    "message": "重新整理"
+    "message": "Segarkan"
   },
   "resetSettings": {
-    "message": "重設為預設值"
+    "message": "Atur Ulang ke Default"
   },
   "confirmResetSettings": {
-    "message": "確定要將所有設定和操作重設為預設值嗎？此操作無法復原。"
+    "message": "Apakah Anda yakin ingin mengatur ulang semua pengaturan dan tindakan ke nilai default? Ini tidak dapat dibatalkan."
   },
   "resetComplete": {
-    "message": "重設完成！"
+    "message": "Pengaturan ulang selesai!"
   },
   "resetError": {
-    "message": "重設設定時發生錯誤。請重試。"
+    "message": "Error saat mengatur ulang pengaturan. Silakan coba lagi."
   }
 }
