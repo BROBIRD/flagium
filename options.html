@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flagium Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="options-container">
+    <div class="options-header">
+      <h1 class="options-title" data-i18n="settings"></h1>
+    </div>
+
+    <!-- Language Settings -->
+    <div class="options-section">
+      <h2 class="section-title" data-i18n="language"></h2>
+      <div class="form-group">
+        <label class="form-label" for="languageSelect" data-i18n="language"></label>
+        <select class="form-select" id="languageSelect">
+          <option value="auto" data-i18n="languageAuto"></option>
+          <option value="en" data-i18n="languageEnglish"></option>
+          <option value="zh_CN" data-i18n="languageChinese"></option>
+          <option value="zh_TW" data-i18n="languageChineseTW"></option>
+          <option value="ja" data-i18n="languageJapanese"></option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Cache Settings -->
+    <div class="options-section">
+      <h2 class="section-title" data-i18n="cacheSettings"></h2>
+      <div class="form-group">
+        <label class="form-label" for="cacheExpiry" data-i18n="cacheExpiry"></label>
+        <input type="number" class="form-input" id="cacheExpiry" min="1" max="1440" value="60">
+        <div class="form-help" data-i18n="cacheExpiryHelp"></div>
+      </div>
+      <div class="form-group">
+        <button class="btn-secondary" id="clearCacheBtn" data-i18n="clearCache"></button>
+      </div>
+    </div>
+
+    <!-- Custom Actions -->
+    <div class="options-section">
+      <h2 class="section-title" data-i18n="customActions"></h2>
+      <div class="form-help" data-i18n="urlTemplateHelp"></div>
+
+      <div class="action-list" id="actionList">
+        <!-- Actions will be dynamically loaded here -->
+      </div>
+
+      <div style="margin-top: 16px;">
+        <button class="btn-primary" id="addActionBtn" data-i18n="addAction"></button>
+      </div>
+    </div>
+
+    <!-- Save Status -->
+    <div id="saveStatus" class="save-status hidden">
+      <span data-i18n="saved"></span>
+    </div>
+  </div>
+
+  <!-- Add/Edit Action Modal -->
+  <div id="actionModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle" data-i18n="addAction"></h3>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="actionName" data-i18n="actionName"></label>
+          <input type="text" class="form-input" id="actionName" placeholder="My Action">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="actionUrl" data-i18n="urlTemplate"></label>
+          <input type="text" class="form-input" id="actionUrl" placeholder="https://example.com/?domain={domain}">
+          <div class="form-help" data-i18n="urlTemplateHelp"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="actionIcon" data-i18n="icon"></label>
+          <input type="text" class="form-input" id="actionIcon" placeholder="🔗" maxlength="2">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="modalCancel" data-i18n="cancel"></button>
+        <button class="btn-primary" id="modalSave" data-i18n="save"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

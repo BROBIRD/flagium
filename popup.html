@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header with flag and country -->
+    <div class="header">
+      <div class="flag-container">
+        <img id="flagIcon" class="flag-icon" src="icons/icon48.png" alt="">
+      </div>
+      <div class="country-info">
+        <div id="countryName" class="country-name">-</div>
+        <div id="cityName" class="city-name">-</div>
+      </div>
+      <button id="refreshBtn" class="refresh-btn" title="Refresh">↻</button>
+    </div>
+
+    <!-- Main info section -->
+    <div class="info-section">
+      <div class="info-row">
+        <span class="info-label" data-i18n="domain"></span>
+        <span id="domain" class="info-value">-</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-i18n="ipAddress"></span>
+        <span id="ipAddress" class="info-value selectable">-</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-i18n="ispOrganization"></span>
+        <span id="ispOrg" class="info-value">-</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-i18n="asn"></span>
+        <span id="asn" class="info-value">-</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-i18n="protocol"></span>
+        <span id="protocol" class="info-value">-</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label" data-i18n="hsts"></span>
+        <span id="hsts" class="info-value">
+          <span class="status-badge disabled" data-i18n="disabled"></span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Actions section -->
+    <div class="actions-section" id="actionsSection">
+      <!-- Actions will be dynamically inserted here -->
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button id="settingsBtn" class="settings-btn" data-i18n="settings"></button>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="loading-spinner"></div>
+      <div class="loading-text" data-i18n="loading"></div>
+    </div>
+
+    <!-- Error message -->
+    <div id="errorMessage" class="error-message hidden">
+      <span class="error-icon">⚠️</span>
+      <span class="error-text" data-i18n="errorFetchingData"></span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+  <script src="popup_protocol.js"></script>
+</body>
+</html>

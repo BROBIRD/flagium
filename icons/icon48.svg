@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+      <linearGradient id="grad48" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#1a73e8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <circle cx="24" cy="24" r="22" fill="url(#grad48)"/>
+    <g stroke="white" stroke-width="1.5" fill="none">
+      <circle cx="24" cy="21.6" r="12"/>
+      <ellipse cx="24" cy="21.6" rx="12" ry="3.84"/>
+      <line x1="24" y1="9.600000000000001" x2="24" y2="33.599999999999994"/>
+    </g>
+    <line x1="31.200000000000003" y1="24" x2="31.200000000000003" y2="36" stroke="white" stroke-width="1.5"/>
+    <path d="M 31.200000000000003,24 L 38.400000000000006,24.96 L 38.400000000000006,29.759999999999998 L 31.200000000000003,28.799999999999997 Z" fill="#ff4444"/>
+  </svg>

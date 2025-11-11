@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+
+# Package files
+package-lock.json
+package.json
+
+# Development files
+*.log
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Python files (from icon generation)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary files
+*.tmp
+*.bak
+
+# Build output
+dist/
+build/
+
+# Chrome extension package
+*.crx
+*.pem
+*.zip
+
+# Test files
+test/
+tests/
+
+# Generator scripts (optional, can be removed in production)
+generate_icons.html
+generate_png_icons.js
+create_icons.py

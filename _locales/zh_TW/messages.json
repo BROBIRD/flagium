@@ -1,0 +1,143 @@
+{
+  "extensionName": {
+    "message": "Flagium"
+  },
+  "extensionDescription": {
+    "message": "顯示網站伺服器位置和網路資訊"
+  },
+  "domain": {
+    "message": "網域"
+  },
+  "ipAddress": {
+    "message": "IP 位址"
+  },
+  "country": {
+    "message": "國家"
+  },
+  "city": {
+    "message": "城市"
+  },
+  "ispOrganization": {
+    "message": "ISP/組織"
+  },
+  "asn": {
+    "message": "ASN"
+  },
+  "protocol": {
+    "message": "協議"
+  },
+  "hsts": {
+    "message": "HSTS"
+  },
+  "enabled": {
+    "message": "已啟用"
+  },
+  "disabled": {
+    "message": "未啟用"
+  },
+  "domainWhois": {
+    "message": "網域 Whois"
+  },
+  "ipWhois": {
+    "message": "IP Whois"
+  },
+  "asnWhois": {
+    "message": "ASN Whois"
+  },
+  "copyIP": {
+    "message": "複製 IP"
+  },
+  "copied": {
+    "message": "已複製！"
+  },
+  "settings": {
+    "message": "設定"
+  },
+  "language": {
+    "message": "語言"
+  },
+  "languageAuto": {
+    "message": "自動（瀏覽器語言）"
+  },
+  "languageEnglish": {
+    "message": "English"
+  },
+  "languageChinese": {
+    "message": "简体中文"
+  },
+  "languageChineseTW": {
+    "message": "繁體中文"
+  },
+  "languageJapanese": {
+    "message": "日本語"
+  },
+  "customActions": {
+    "message": "自訂操作"
+  },
+  "addAction": {
+    "message": "新增操作"
+  },
+  "actionName": {
+    "message": "操作名稱"
+  },
+  "urlTemplate": {
+    "message": "URL 範本"
+  },
+  "icon": {
+    "message": "圖示"
+  },
+  "save": {
+    "message": "儲存"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "delete": {
+    "message": "刪除"
+  },
+  "edit": {
+    "message": "編輯"
+  },
+  "loading": {
+    "message": "載入中..."
+  },
+  "error": {
+    "message": "錯誤"
+  },
+  "errorFetchingData": {
+    "message": "取得資料時發生錯誤"
+  },
+  "noDataAvailable": {
+    "message": "無可用資料"
+  },
+  "localAddress": {
+    "message": "本機位址"
+  },
+  "privateNetwork": {
+    "message": "私人網路"
+  },
+  "unknown": {
+    "message": "未知"
+  },
+  "cacheSettings": {
+    "message": "快取設定"
+  },
+  "cacheExpiry": {
+    "message": "快取過期時間（分鐘）"
+  },
+  "clearCache": {
+    "message": "清除快取"
+  },
+  "cacheCleared": {
+    "message": "快取已清除！"
+  },
+  "urlTemplateHelp": {
+    "message": "使用 {domain}、{ip}、{asn}、{country_code} 作為佔位符"
+  },
+  "actionEnabled": {
+    "message": "已啟用"
+  },
+  "actionDisabled": {
+    "message": "已停用"
+  }
+}

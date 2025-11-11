@@ -1,0 +1,143 @@
+{
+  "extensionName": {
+    "message": "Flagium"
+  },
+  "extensionDescription": {
+    "message": "ウェブサイトのサーバー位置とネットワーク情報を表示"
+  },
+  "domain": {
+    "message": "ドメイン"
+  },
+  "ipAddress": {
+    "message": "IPアドレス"
+  },
+  "country": {
+    "message": "国"
+  },
+  "city": {
+    "message": "都市"
+  },
+  "ispOrganization": {
+    "message": "ISP/組織"
+  },
+  "asn": {
+    "message": "ASN"
+  },
+  "protocol": {
+    "message": "プロトコル"
+  },
+  "hsts": {
+    "message": "HSTS"
+  },
+  "enabled": {
+    "message": "有効"
+  },
+  "disabled": {
+    "message": "無効"
+  },
+  "domainWhois": {
+    "message": "ドメイン Whois"
+  },
+  "ipWhois": {
+    "message": "IP Whois"
+  },
+  "asnWhois": {
+    "message": "ASN Whois"
+  },
+  "copyIP": {
+    "message": "IPをコピー"
+  },
+  "copied": {
+    "message": "コピーしました！"
+  },
+  "settings": {
+    "message": "設定"
+  },
+  "language": {
+    "message": "言語"
+  },
+  "languageAuto": {
+    "message": "自動（ブラウザ言語）"
+  },
+  "languageEnglish": {
+    "message": "English"
+  },
+  "languageChinese": {
+    "message": "简体中文"
+  },
+  "languageChineseTW": {
+    "message": "繁體中文"
+  },
+  "languageJapanese": {
+    "message": "日本語"
+  },
+  "customActions": {
+    "message": "カスタムアクション"
+  },
+  "addAction": {
+    "message": "アクションを追加"
+  },
+  "actionName": {
+    "message": "アクション名"
+  },
+  "urlTemplate": {
+    "message": "URLテンプレート"
+  },
+  "icon": {
+    "message": "アイコン"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "cancel": {
+    "message": "キャンセル"
+  },
+  "delete": {
+    "message": "削除"
+  },
+  "edit": {
+    "message": "編集"
+  },
+  "loading": {
+    "message": "読み込み中..."
+  },
+  "error": {
+    "message": "エラー"
+  },
+  "errorFetchingData": {
+    "message": "データの取得中にエラーが発生しました"
+  },
+  "noDataAvailable": {
+    "message": "利用可能なデータがありません"
+  },
+  "localAddress": {
+    "message": "ローカルアドレス"
+  },
+  "privateNetwork": {
+    "message": "プライベートネットワーク"
+  },
+  "unknown": {
+    "message": "不明"
+  },
+  "cacheSettings": {
+    "message": "キャッシュ設定"
+  },
+  "cacheExpiry": {
+    "message": "キャッシュ有効期限（分）"
+  },
+  "clearCache": {
+    "message": "キャッシュをクリア"
+  },
+  "cacheCleared": {
+    "message": "キャッシュをクリアしました！"
+  },
+  "urlTemplateHelp": {
+    "message": "{domain}、{ip}、{asn}、{country_code} をプレースホルダーとして使用"
+  },
+  "actionEnabled": {
+    "message": "有効"
+  },
+  "actionDisabled": {
+    "message": "無効"
+  }
+}
