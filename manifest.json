@@ -20,6 +20,11 @@
     "clipboardWrite",
     "<all_urls>"
   ],
+  "data_collection_permissions": {
+    "network_requests": true,
+    "tabs": true,
+    "storage": true
+  },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
