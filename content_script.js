@@ -48,7 +48,7 @@
     console.log('[Flagium] Detected protocol:', protocolInfo);
 
     if (protocolInfo.version !== 'Unknown') {
-      chrome.runtime.sendMessage({
+      browser.runtime.sendMessage({
         type: 'PROTOCOL_DETECTED',
         protocol: protocolInfo.version,
         url: window.location.href,
@@ -69,7 +69,7 @@
   setTimeout(sendProtocolInfo, 2000);
 
   // Listen for requests from popup
-  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.type === 'GET_PROTOCOL') {
       console.log('[Flagium Content] Popup requested protocol info');
 

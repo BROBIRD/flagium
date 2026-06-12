@@ -3,10 +3,9 @@
 
 const SUPPORTED_LANGUAGES = ['en', 'zh_CN', 'zh_TW', 'ja', 'es', 'fr', 'de', 'ru', 'id', 'pt_BR', 'pt_PT'];
 
-// Load language messages from a specific locale
 async function loadLanguageMessages(lang) {
   try {
-    const response = await fetch(chrome.runtime.getURL(`_locales/${lang}/messages.json`));
+    const response = await fetch(browser.runtime.getURL(`_locales/${lang}/messages.json`));
     if (response.ok) {
       return await response.json();
     }
@@ -14,9 +13,8 @@ async function loadLanguageMessages(lang) {
     console.error(`Failed to load language ${lang}:`, error);
   }
 
-  // Fallback to English
   try {
-    const response = await fetch(chrome.runtime.getURL('_locales/en/messages.json'));
+    const response = await fetch(browser.runtime.getURL('_locales/en/messages.json'));
     return await response.json();
   } catch (error) {
     console.error('Failed to load fallback language:', error);
@@ -24,14 +22,12 @@ async function loadLanguageMessages(lang) {
   }
 }
 
-// Get the current language from storage or browser
 async function getCurrentLanguage() {
-  const storage = await chrome.storage.sync.get(['language']);
+  const storage = await browser.storage.sync.get(['language']);
   let lang = storage.language || 'auto';
 
   if (lang === 'auto') {
-    // Use browser language
-    lang = chrome.i18n.getUILanguage();
+    lang = browser.i18n.getUILanguage();
     // Convert to our format (e.g., zh-CN to zh_CN)
     lang = lang.replace('-', '_');
 

@@ -59,7 +59,7 @@ function initializeI18n() {
   // Replace text for all elements with data-i18n attribute
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    const message = chrome.i18n.getMessage(key);
+    const message = browser.i18n.getMessage(key);
     if (message) {
       if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
         element.placeholder = message;
@@ -72,12 +72,12 @@ function initializeI18n() {
   });
 
   // Set page title
-  document.title = `Flagium - ${chrome.i18n.getMessage('settings')}`;
+  document.title = `Flagium - ${browser.i18n.getMessage('settings')}`;
 }
 
 // Load all settings
 async function loadSettings() {
-  const storage = await chrome.storage.sync.get(['language', 'cacheExpiry', 'actions']);
+  const storage = await browser.storage.sync.get(['language', 'cacheExpiry', 'actions']);
 
   // Language
   const languageSelect = document.getElementById('languageSelect');
@@ -126,7 +126,7 @@ function createActionItem(action, index) {
   name.className = 'action-item-name';
   // Use i18n for default actions, otherwise use the custom name
   if (action.isDefault && action.name) {
-    name.textContent = chrome.i18n.getMessage(action.name) || action.name;
+    name.textContent = browser.i18n.getMessage(action.name) || action.name;
   } else {
     name.textContent = action.name || 'Unnamed Action';
   }
@@ -170,7 +170,7 @@ function createActionItem(action, index) {
     const editBtn = document.createElement('button');
     editBtn.className = 'icon-btn';
     editBtn.innerHTML = '✏️';
-    editBtn.title = chrome.i18n.getMessage('edit');
+    editBtn.title = browser.i18n.getMessage('edit');
     editBtn.addEventListener('click', () => {
       openActionModal(action, index);
     });
@@ -182,7 +182,7 @@ function createActionItem(action, index) {
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'icon-btn';
     deleteBtn.innerHTML = '🗑️';
-    deleteBtn.title = chrome.i18n.getMessage('delete');
+    deleteBtn.title = browser.i18n.getMessage('delete');
     deleteBtn.addEventListener('click', () => {
       deleteAction(index);
     });
@@ -206,7 +206,7 @@ function openActionModal(action = null, index = -1) {
 
   if (action) {
     // Edit mode
-    modalTitle.textContent = chrome.i18n.getMessage('edit') || 'Edit Action';
+    modalTitle.textContent = browser.i18n.getMessage('edit') || 'Edit Action';
     nameInput.value = action.isDefault ? '' : action.name || '';
     urlInput.value = action.url || '';
     iconInput.value = action.icon || '🔗';
@@ -215,7 +215,7 @@ function openActionModal(action = null, index = -1) {
     nameInput.disabled = action.isDefault;
   } else {
     // Add mode
-    modalTitle.textContent = chrome.i18n.getMessage('addAction');
+    modalTitle.textContent = browser.i18n.getMessage('addAction');
     nameInput.value = '';
     urlInput.value = '';
     iconInput.value = '🔗';
@@ -265,7 +265,7 @@ function saveActionFromModal() {
 
 // Delete action
 function deleteAction(index) {
-  if (confirm(chrome.i18n.getMessage('confirmDelete') || 'Are you sure you want to delete this action?')) {
+  if (confirm(browser.i18n.getMessage('confirmDelete') || 'Are you sure you want to delete this action?')) {
     currentActions.splice(index, 1);
     saveActions();
   }
@@ -274,7 +274,7 @@ function deleteAction(index) {
 // Save actions to storage
 async function saveActions() {
   try {
-    await chrome.storage.sync.set({ actions: currentActions });
+    await browser.storage.sync.set({ actions: currentActions });
     renderActionsList();
     showSaveStatus();
   } catch (error) {
@@ -293,7 +293,7 @@ async function saveSettings() {
   };
 
   try {
-    await chrome.storage.sync.set(settings);
+    await browser.storage.sync.set(settings);
     showSaveStatus();
 
     // If language changed, reload the page to apply new language
@@ -314,9 +314,9 @@ function showSaveStatus() {
     // Update the text content with i18n message
     const statusText = status.querySelector('span');
     if (statusText) {
-      statusText.textContent = chrome.i18n.getMessage('saved') || 'Settings saved successfully!';
+      statusText.textContent = browser.i18n.getMessage('saved') || 'Settings saved successfully!';
     } else {
-      status.textContent = chrome.i18n.getMessage('saved') || 'Settings saved successfully!';
+      status.textContent = browser.i18n.getMessage('saved') || 'Settings saved successfully!';
     }
 
     status.classList.remove('hidden');
@@ -328,7 +328,7 @@ function showSaveStatus() {
     const statusDiv = document.createElement('div');
     statusDiv.id = 'saveStatus';
     statusDiv.className = 'save-status';
-    statusDiv.textContent = chrome.i18n.getMessage('saved') || 'Settings saved successfully!';
+    statusDiv.textContent = browser.i18n.getMessage('saved') || 'Settings saved successfully!';
     document.body.appendChild(statusDiv);
 
     setTimeout(() => {
@@ -342,7 +342,7 @@ async function saveAllSettings() {
   const languageSelect = document.getElementById('languageSelect');
   const cacheExpiryInput = document.getElementById('cacheExpiry');
 
-  const currentLanguage = await chrome.storage.sync.get(['language']);
+  const currentLanguage = await browser.storage.sync.get(['language']);
   const oldLanguage = currentLanguage.language || 'auto';
   const newLanguage = languageSelect.value;
 
@@ -353,7 +353,7 @@ async function saveAllSettings() {
   };
 
   try {
-    await chrome.storage.sync.set(settings);
+    await browser.storage.sync.set(settings);
     showSaveStatus();
 
     // If language changed, apply new language dynamically or reload
@@ -386,7 +386,7 @@ async function resetToDefaults() {
     currentActions = [...DEFAULT_ACTIONS];
 
     // Save all settings
-    await chrome.storage.sync.set({
+    await browser.storage.sync.set({
       language: 'auto',
       cacheExpiry: 60,
       actions: DEFAULT_ACTIONS
@@ -398,7 +398,7 @@ async function resetToDefaults() {
     // Show success message
     const btn = document.getElementById('resetActionsBtn');
     const originalText = btn.textContent;
-    btn.textContent = chrome.i18n.getMessage('resetComplete') || 'Reset complete!';
+    btn.textContent = browser.i18n.getMessage('resetComplete') || 'Reset complete!';
     btn.disabled = true;
 
     setTimeout(() => {
@@ -410,7 +410,7 @@ async function resetToDefaults() {
     showSaveStatus();
   } catch (error) {
     console.error('Error resetting to defaults:', error);
-    alert(chrome.i18n.getMessage('resetError') || 'Error resetting settings. Please try again.');
+    alert(browser.i18n.getMessage('resetError') || 'Error resetting settings. Please try again.');
   }
 }
 
@@ -431,10 +431,10 @@ function setupEventListeners() {
 
   // Clear cache button
   document.getElementById('clearCacheBtn').addEventListener('click', async () => {
-    await chrome.runtime.sendMessage({ type: 'CLEAR_CACHE' });
+    await browser.runtime.sendMessage({ type: 'CLEAR_CACHE' });
     const btn = document.getElementById('clearCacheBtn');
     const originalText = btn.textContent;
-    btn.textContent = chrome.i18n.getMessage('cacheCleared') || 'Cache cleared!';
+    btn.textContent = browser.i18n.getMessage('cacheCleared') || 'Cache cleared!';
     btn.disabled = true;
 
     setTimeout(() => {
@@ -450,7 +450,7 @@ function setupEventListeners() {
 
   // Reset settings button
   document.getElementById('resetActionsBtn').addEventListener('click', async () => {
-    if (confirm(chrome.i18n.getMessage('confirmResetSettings') || 'Are you sure you want to reset all settings and actions to defaults? This cannot be undone.')) {
+    if (confirm(browser.i18n.getMessage('confirmResetSettings') || 'Are you sure you want to reset all settings and actions to defaults? This cannot be undone.')) {
       await resetToDefaults();
     }
   });
