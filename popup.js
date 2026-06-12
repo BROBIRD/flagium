@@ -177,11 +177,11 @@ function displayTabData(data) {
 
   // HSTS
   const hstsElement = document.getElementById('hsts');
-  if (data.hsts) {
-    hstsElement.innerHTML = `<span class="status-badge enabled">${browser.i18n.getMessage('enabled')}</span>`;
-  } else {
-    hstsElement.innerHTML = `<span class="status-badge disabled">${browser.i18n.getMessage('disabled')}</span>`;
-  }
+  hstsElement.innerHTML = '';
+  const statusSpan = document.createElement('span');
+  statusSpan.className = data.hsts ? 'status-badge enabled' : 'status-badge disabled';
+  statusSpan.textContent = data.hsts ? browser.i18n.getMessage('enabled') : browser.i18n.getMessage('disabled');
+  hstsElement.appendChild(statusSpan);
 
   // Load and display actions
   loadActions(data);
