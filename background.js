@@ -78,9 +78,9 @@ browser.tabs.onActivated.addListener(async (activeInfo) => {
       browser.browserAction.setIcon({
         tabId,
         path: {
-          16: 'icons/icon16.png',
-          48: 'icons/icon48.png',
-          128: 'icons/icon128.png'
+          16: 'icons/icon16.svg',
+          48: 'icons/icon48.svg',
+          128: 'icons/icon128.svg'
         }
       });
     }
@@ -88,9 +88,9 @@ browser.tabs.onActivated.addListener(async (activeInfo) => {
     browser.browserAction.setIcon({
       tabId,
       path: {
-        16: 'icons/icon16.png',
-        48: 'icons/icon48.png',
-        128: 'icons/icon128.png'
+        16: 'icons/icon16.svg',
+        48: 'icons/icon48.svg',
+        128: 'icons/icon128.svg'
       }
     });
   }
@@ -210,9 +210,9 @@ async function updateTabData(tabId, data) {
       browser.browserAction.setIcon({
         tabId,
         path: {
-          16: 'icons/icon16.png',
-          48: 'icons/icon48.png',
-          128: 'icons/icon128.png'
+          16: 'icons/icon16.svg',
+          48: 'icons/icon48.svg',
+          128: 'icons/icon128.svg'
         }
       });
     }
@@ -220,9 +220,9 @@ async function updateTabData(tabId, data) {
     browser.browserAction.setIcon({
       tabId,
       path: {
-        16: 'icons/icon16.png',
-        48: 'icons/icon48.png',
-        128: 'icons/icon128.png'
+        16: 'icons/icon16.svg',
+        48: 'icons/icon48.svg',
+        128: 'icons/icon128.svg'
       }
     });
   }
@@ -247,9 +247,9 @@ async function setFlagIcon(tabId, countryCode) {
     browser.browserAction.setIcon({
       tabId,
       path: {
-        16: 'icons/icon16.png',
-        48: 'icons/icon48.png',
-        128: 'icons/icon128.png'
+        16: 'icons/icon16.svg',
+        48: 'icons/icon48.svg',
+        128: 'icons/icon128.svg'
       }
     });
   }
