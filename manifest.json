@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Flagium - Server Location & Network Info",
   "short_name": "Flagium",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Display the physical server location and network details of any website you visit with country flags and IP information.",
   "default_locale": "en",
   "browser_specific_settings": {
